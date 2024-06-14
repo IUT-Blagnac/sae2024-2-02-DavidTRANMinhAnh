@@ -8,11 +8,11 @@ public class Algo {
         StringBuilder resultat = new StringBuilder();
         int cpt = 1;
         for (int i = 1; i < in.length(); i++) {
-            if (in.charAt(i) == in.charAt(i - 1)) {
-                cpt++;
-            } else {
+            if (in.charAt(i) != in.charAt(i - 1) || cpt >= 9) {
                 resultat.append(cpt).append(in.charAt(i - 1));
                 cpt = 1;
+            } else {
+                cpt++;
             }
         }
         resultat.append(cpt).append(in.charAt(in.length() - 1));
