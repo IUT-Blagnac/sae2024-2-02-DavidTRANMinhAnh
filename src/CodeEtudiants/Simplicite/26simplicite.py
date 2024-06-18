@@ -25,7 +25,7 @@ def RLE(input):
 
     return ''.join(chaineCompresse)
 
-def RLE_ite(input, iteration):
+def RLE_iteration(input, iteration):
     chaineCompresse = input
 
     for i in range(iteration):
@@ -49,7 +49,7 @@ def unRLE(input):
 
     return ''.join(chaineDecompresse)
 
-def unRLE_ite(input, iteration):
+def unRLE_iteration(input, iteration):
     chaineDecompresse = input
     # Effectuer l'opération unRLE autant de fois que nécessaire
     for _ in range(iteration):

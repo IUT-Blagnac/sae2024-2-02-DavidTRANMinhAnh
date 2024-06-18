@@ -6,17 +6,17 @@ package iut.sae.algo;
 
 public class simplicite {
 
-    public static String encodage_rle_simplicite(String texte) {
+    public static String RLE(String in) {
 
         String resultat = "";
 
-        char caract = texte.charAt(0);
+        char caract = in.charAt(0);
 
         int compteur = 1;
 
-        for (int i = 1; i < texte.length(); i++) {
+        for (int i = 1; i < in.length(); i++) {
 
-            if (texte.charAt(i) == caract) {
+            if (in.charAt(i) == caract) {
 
                 compteur++;
 
@@ -24,7 +24,7 @@ public class simplicite {
 
                     resultat += caract + "" + compteur;
 
-                    caract = texte.charAt(i);
+                    caract = in.charAt(i);
 
                     compteur = 0;
                 }
@@ -32,7 +32,7 @@ public class simplicite {
 
                 resultat += caract + "" + compteur;
 
-                caract = texte.charAt(i);
+                caract = in.charAt(i);
 
                 compteur = 1;
             }

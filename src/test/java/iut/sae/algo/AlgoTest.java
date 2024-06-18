@@ -96,4 +96,44 @@ public class AlgoTest extends TestCase{
       }
    }
 
+   @Test
+   public void testRLEPerso(){
+      assertEquals("9a1b", Algo.RLE("aaaaaaaaab")); // 9 mêmes caractères suivi d'un autre
+      assertEquals("3a3b3c", Algo.RLE("aaabbbccc")); // Cas équilibré
+      assertEquals("9a9a2a", Algo.RLE("aaaaaaaaa" + "aaaaaaaaa" + "aa")); // Plus de 9 caractères identiques
+   }
+
+   @Test
+   public void testRLERecursifPerso(){
+      try {
+         // Cas supplémentaires
+         assertEquals("3113a3111b3113c", Algo.RLE("aaabbbccc", 3));
+         assertEquals("9a9a2a", Algo.RLE("aaaaaaaaa" + "aaaaaaaaa" + "aa", 1));
+         assertEquals("121a", Algo.RLE("aaaaaaaaa" + "aaaaaaaaa" + "aa", 2));
+      } catch (Exception e) {
+         fail("Exception inatendue");
+      }
+   }
+
+   @Test
+   public void testUnRLEPerso(){
+      try {
+         assertEquals("aaaaaaaaab", Algo.unRLE("9a1b")); // 9 mêmes caractères suivi d'un autre
+         assertEquals("aaabbbccc", Algo.unRLE("3a3b3c")); // Cas équilibré
+         assertEquals("aaaaaaaaa" + "aaaaaaaaa" + "aa", Algo.unRLE("9a9a2a")); // Plus de 9 caractères identiques
+      } catch (Exception e) {
+         fail("Exception inatendue");
+      }
+   }
+
+   @Test
+   public void testUnRLERecursifPerso(){
+      try {
+         assertEquals("aaabbbccc", Algo.unRLE("3113a3111b3113c", 3));
+         assertEquals("aaaaaaaaa" + "aaaaaaaaa" + "aa", Algo.unRLE("9a9a2a", 1));
+         assertEquals("aaaaaaaaa" + "aaaaaaaaa" + "aa", Algo.unRLE("121a", 2));
+      } catch (Exception e) {
+         fail("Exception inatendue");
+      }
+   }
 }

@@ -53,6 +53,16 @@ endif::[]
 - [ ] 3
 - [ ] 4
 
+Rendu
+^^^^^^
+[options="header,footer"]
+|=======================
+|Documents à rendre
+|link:rapport/rapport.adoc[rapport]    
+|link:rapport/GrilleEvaluation[]    
+|3    
+|6    
+|=======================
 // == Objectives
 == Objectifs
 
@@ -181,11 +191,12 @@ Vous utiliserez le dépôt initial qui vous aura été attribué via classroom p
 
 WARNING: Les répertoires et fichiers existants devront être complétés et mis à jour sans être renommés. Les binaires de compilation (répertoire `bin` ou `target` par exemple) ne devront pas être poussés sur le dépôt.
 
+
 === Pré-requis
 
 Voici les pré-requis pour exécuter nos codes d'évaluation.
 
-- Java v.x.y.z
+- Java 17+
 - ...
 
 === Reproductibilité
@@ -193,11 +204,11 @@ Voici les pré-requis pour exécuter nos codes d'évaluation.
 - Pour reproduire nos analyses :
 . Installez X
 . Lancez Y
-. ...
+. Un IDE (exemple Visual Studio Code)
 
 === Références
 
-- link:http://xyz[Mon super outil XYZ]
+- link:https://app.codacy.com/organizations/gh/IUT-Blagnac/dashboard[Codacy]
 - ...
 
 == Généralités, notation de la SAÉ et résultat du concours
