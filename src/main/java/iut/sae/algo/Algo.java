@@ -1,82 +1,91 @@
 package iut.sae.algo;
 
-public class Algo {
-    public static String RLE(String in) {
-        int compteur = 0; //compteur d'occurence
-        int cpt = 0; //compteur de caractère
-        String out = ""; //chaine de caractère de sortie
 
-        if (in.isEmpty()) { //si la chaine est vide, on retourne une chaine vide
-            return "";
-        }
+public class Algo{
+    public static String RLE(String in){
+                    
+        if (in.isEmpty()) return "";
 
-        for (int i = 0; i < in.length(); i += cpt) { //parcours de la chaine
-            char c = in.charAt(i);
-            compteur = 1;
-            cpt = 1;
-            while (i+cpt < in.length() && in.charAt(i+cpt) == c) { //comptage des occurences
-                compteur++;
-                cpt++;
-                if (compteur == 10) { //si le compteur atteint 10, on remet le compteur à 1 et on ajoute le caractère
-                    out = out + "9" + c;
-                    compteur = 1;
-                }
+        StringBuilder ChaineFini = new StringBuilder();
+        char characterRepete = in.charAt(0);
+        int nbchar = 1;
+        char caractereCourant;
+
+        for (int i = 1; i < in.length(); i++) {
+            caractereCourant = in.charAt(i);
+    
+            if (caractereCourant == characterRepete && nbchar < 9) {
+                nbchar++;
+            } else {
+                ChaineFini.append(nbchar).append(characterRepete);
+                characterRepete = caractereCourant;
+                nbchar = 1;
             }
-            out = out + compteur + c;
         }
-        return out; //retourne la chaine compressée
+            
+        ChaineFini.append(nbchar).append(characterRepete);
+    
+        return ChaineFini.toString();
     }
 
 
     public static String RLE(String in, int iteration) throws AlgoException{
-        String out = ""; //chaine de caractère de sortie
-
-        if (iteration == 1) { //si l'itération est égale à 1, on retourne la chaine compressée
-            return RLE(in);
+        
+        if (iteration <= 0) {
+            throw new IllegalArgumentException(" Erreur : Le nombre d'iterations doit etre > 0 ");
         }
-
-        for (iteration = iteration ; iteration > 0; iteration--) { //sinon on compresse la chaine autant de fois que l'itération
-            out = RLE(in); //on compresse la chaine
-            in = out; //on remplace la chaine d'entrée par la chaine compressée
+        
+        StringBuilder ChaineFini = new StringBuilder(in);
+        
+        while (iteration > 0) {
+            ChaineFini = new StringBuilder(RLE(ChaineFini.toString()));
+            iteration--;  
         }
-
-        return out; //retourne la chaine compressée
+        
+        return ChaineFini.toString();
     }
 
+    public static String unRLE(String in) throws AlgoException {
 
-
-
-    public static String unRLE(String in) throws AlgoException{
-        int compteur = 0; //compteur d'occurence
-        String out = ""; //chaine de caractère de sortie
-
-        if (in.isEmpty()) { //si la chaine est vide, on retourne une chaine vide
+        if (in.isEmpty()) {
             return "";
         }
-
-        for (int i = 0; i < in.length(); i += 2) { //parcours de la chaine
-            compteur = Character.getNumericValue(in.charAt(i)); //récupération du nombre d'occurence
-            for (int j = 0; j < compteur; j++) { //ajout du caractère autant de fois que le nombre d'occurence
-                out = out + in.charAt(i+1);
-            }
+    
+        if (in.length() % 2 != 0) {
+            throw new IllegalArgumentException(" Erreur : La longueur de la chaine doit etre paire. ");
         }
-        return out; //retourne la chaine décompressée
+    
+        StringBuilder ChaineFini = new StringBuilder();
+        int index;
+        char characterRepete;
+    
+        for (int i = 0; i < in.length(); i ++ ) {
+            index = Character.getNumericValue(in.charAt(i));
+            characterRepete = in.charAt(i + 1);
+            ChaineFini.append(String.valueOf(characterRepete).repeat(index));
 
+            i++;
+        }
+    
+        return ChaineFini.toString();
     }
 
-    
+
     public static String unRLE(String in, int iteration) throws AlgoException{
-        String out = ""; //chaine de caractère de sortie
 
-        if (iteration == 1) { //si l'itération est égale à 1, on retourne la chaine décompressée
-            return unRLE(in);
+        if (iteration <= 0) {
+            throw new IllegalArgumentException(" Erreur : Le nombre d'iterations doit etre > 0 ");
         }
-
-        for (iteration = iteration ; iteration > 0; iteration--) { //sinon on décompresse la chaine autant de fois que l'itération
-            out = unRLE(in); //on décompresse la chaine
-            in = out; //on remplace la chaine d'entrée par la chaine décompressée
+        
+        StringBuilder ChaineFini = new StringBuilder(in);
+        
+        while (iteration > 0) {
+            ChaineFini = new StringBuilder(unRLE(ChaineFini.toString()));
+            iteration--;  
         }
-
-        return out; //retourne la chaine décompressée
+        
+        return ChaineFini.toString();
     }
 }
+
+        
