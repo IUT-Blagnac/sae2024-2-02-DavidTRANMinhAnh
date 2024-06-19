@@ -96,6 +96,8 @@ public class AlgoTest extends TestCase{
       }
    }
 
+   // TESTS EN PLUS
+
    @Test
    public void testRLEPerso(){
       assertEquals("9a1b", Algo.RLE("aaaaaaaaab")); // 9 mêmes caractères suivi d'un autre
