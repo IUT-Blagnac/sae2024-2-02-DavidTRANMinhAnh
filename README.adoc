@@ -172,21 +172,22 @@ Vous utiliserez le dépôt initial qui vous aura été attribué via classroom p
 
 === Phase 1 (deadline : **vendredi 14 juin 2024** à minuit)
 
-* [ ] Votre ou vos algorithmes en précisant les éléments du tableau ci-dessous :
+* [x] Votre ou vos algorithmes en précisant les éléments du tableau ci-dessous :
 
 [options="header"]
 |==========================================================================
 | #    | lien                                                     | langage  | catégorie 
-| 1    | link:src/main/java/exercice/Exercice1.java[meilleur java]| Java     | Simplicité
-| 2    | link:src/main/java/exercice/Exercice2.java[meilleur C]    | C     | Efficacité
-| ...  | ...                                                      | ...      | ...      
+| 1    | link:src/main/java/iut/sae/algo.java[Efficacite.java]| Java     | Efficacité
+| 2    | link:Autres_codes/Efficacite.py[Efficacite.py]    | Python     | Efficacité
+| 3    | link:Autres_codes/Simplicite.java[Simplicite.java]           | Java      | Simplicité
+| 4    | link:Autres_codes/Sobriete.java[Sobriete.java]           | Java      | Sobriétéé      
 |==========================================================================
 
 === Phase 2 (deadline : **vendredi 21 juin 2024** à minuit)
 
-* [ ] Le rapport d'évaluation des algorithmes (e.g., asciidoc ou PDF). Pour chaque catégorie, vous devrez désigner qui est 1er, 2ème, 3ème, ... (avec possibilité d’ex-aequo si le hasard vous a attribué des algos similaires). Il doit se trouver dans le répertoire `rapport` de votre dépôt.
-* [ ] Les codes de test, d'évaluation ou de mesure. Ils doivent se trouver dans le répertoire `analyse` de votre dépôt.
-* [ ] Les références des librairies/outils utilisés (pour ceux non fournis). Elles doivent être listées dans la sous-section (Références) ci-dessous.
+* [x] Le rapport d'évaluation des algorithmes (e.g., asciidoc ou PDF). Pour chaque catégorie, vous devrez désigner qui est 1er, 2ème, 3ème, ... (avec possibilité d’ex-aequo si le hasard vous a attribué des algos similaires). Il doit se trouver dans le répertoire `rapport` de votre dépôt.
+* [x] Les codes de test, d'évaluation ou de mesure. Ils doivent se trouver dans le répertoire `analyse` de votre dépôt.
+* [x] Les références des librairies/outils utilisés (pour ceux non fournis). Elles doivent être listées dans la sous-section (Références) ci-dessous.
 * [ ] La chaîne de compilation et exécutable, ou paquetage selon les standards du langage (comment exécuter vos codes d'évaluation). Cette description doit se trouver dans vos rapports.
 
 WARNING: Les répertoires et fichiers existants devront être complétés et mis à jour sans être renommés. Les binaires de compilation (répertoire `bin` ou `target` par exemple) ne devront pas être poussés sur le dépôt.
@@ -197,7 +198,7 @@ WARNING: Les répertoires et fichiers existants devront être complétés et mis
 Voici les pré-requis pour exécuter nos codes d'évaluation.
 
 - Java 17+
-- ...
+- Avoir un IDE pour lancer le répertoire
 
 === Reproductibilité
 
@@ -206,11 +207,13 @@ Voici les pré-requis pour exécuter nos codes d'évaluation.
 . Lancez Y
 . Un IDE (exemple Visual Studio Code)
 . Avoir Docker
+. Avoir SonarQube
 
 === Références
 
 - link:https://app.codacy.com/organizations/gh/IUT-Blagnac/dashboard[Codacy]
-- ...
+- link:https://www.youtube.com/watch?v=6vdRvz_LnbQ&t=662s[Tuto installation sonarqube]
+- link:https://www.youtube.com/watch?v=AAWNQ2wDVAg[Tuto installation docker]
 
 == Généralités, notation de la SAÉ et résultat du concours
 
