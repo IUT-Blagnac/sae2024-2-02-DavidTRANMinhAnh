@@ -1,0 +1,107 @@
+= Rapport SAÉ 2.02
+:icons: font
+:numbered:
+:toc: left
+:toc-title: Sommaire
+:toclevels: 2
+
+== Phase 2: Comparaison et évaluation des solutions
+
+=== Introduction
+
+Dans cette phase, nous évaluons et comparons plusieurs algorithmes de compression RLE soumis par différents étudiants selon des critères spécifiques.
+
+=== Critères de comparaison
+
+- Lisibilité du code
+- Qualité du code (mesurée avec Codacy)
+- Efficacité (complexité algorithmique)
+- Sobriété numérique (consommation des ressources)
+- Temps d'exécution
+
+=== Évaluation des algorithmes
+
+==== Simplicité
+
+[options="header"]
+|=======================
+|Algorithme    |Langage |Total Temps (ms) |Codacy Rank |Compile |Fonctionne  |Passe tests initiaux |Passe tests supplémentaires
+|19            |Java    |26               |B           |Compile |Oui         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|26            |Python  |35               |D           |Compile |Oui         |Non ('caratereActuel' non initialisé correctement dans certaines conditions)                 |Non
+|34            |Java    |69               |A           |Compile |Non         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|45            |Java    |54               |D           |Compile |Non         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|60            |Java    |59               |B           |Compile |Oui         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|=======================
+
+.Description des résultats
+Le tableau ci-dessus montre les résultats de l'évaluation des algorithmes soumis pour la catégorie "Simplicité". Voici le podium pour cette catégorie :
+
+1. 34simplicite.java
+2. 60simplicite.java
+3. 45simplicite.java
+
+J'ai décidé de ce podium en me basant sur plusieurs critères, le premier étant la lisibilité du code. Je trouve que ces trois algorithmes sont très lisibles. Étant donné que le choix du classement final était difficile, j'ai également pris en compte un autre critère d'évaluation pour cette catégorie : la qualité du code. Pour cela, j'ai utilisé Codacy pour m'aider à évaluer la qualité du code. Codacy attribue une note 'Grade' en fonction de plusieurs facteurs :
+
+1. **Complexité cyclomatique** : Mesure la complexité du code en comptant le nombre de chemins indépendants dans le programme.
+2. **Duplication de code** : Détecte les segments de code dupliqués, ce qui peut indiquer une mauvaise réutilisation de code.
+3. **Qualité du code** : Évalue les violations des bonnes pratiques de programmation, telles que définies par des linters et des règles de style de code spécifiques.
+4. **Couverture de tests** : Analyse la couverture des tests unitaires pour s'assurer que le code est bien testé.
+5. **Sécurité** : Vérifie la présence de vulnérabilités potentielles dans le code.
+6. **Documentation** : Contrôle la présence et la qualité des commentaires et de la documentation dans le code.
+
+Afin de départager les algorithmes, j'ai examiné les notes attribuées par Codacy pour chacun d'entre eux. Les notes étaient les suivantes :
+
+- 34simplicite.java : A
+- 45simplicite.java : D
+- 60simplicite.java : B
+
+Ces notes ont été déterminantes pour établir le classement final, avec 34simplicite.java en première position, 60simplicite.java en deuxième et 45simplicite.java en troisième.
+
+==== Efficacité
+
+[options="header"]
+|=======================
+|Algorithme    |Langage |Total Temps (ms) |Codacy Rank |Compile |Fonctionne  |Passe tests initiaux |Passe tests supplémentaires
+|04            |Java    |29               |A           |Compile |Oui         |Non (passe 3 tests sur 4)                  |Oui (mais ne passe pas les testes récurssifs)Non
+|54            |Java    |29               |A           |Compile |Oui         |Non                  |Non
+|55            |Java    |30               |A           |Compile |Oui         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|62            |Java    |66               |B           |Compile |Oui         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|68            |Java    |21               |B           |Compile |Oui         |Oui                  |Oui (mais ne passe pas les testes récurssifs)
+|=======================
+
+.Description des résultats
+Le tableau ci-dessus montre les résultats de l'évaluation des algorithmes soumis pour la catégorie "Efficacité".
+
+Le classement est le suivant :
+
+- **1er : 68efficacite.java** : Cet algorithme a le temps d'exécution le plus rapide (20 ms), ce qui indique une très bonne efficacité. En plus de cela, il a une complexité algorithmique favorable, permettant de gérer de grandes quantités de données de manière efficiente.
+- **2ème : 62efficacite.java** : Avec un temps d'exécution de 21 ms, cet algorithme est légèrement plus lent que le premier, mais reste très performant. Sa complexité algorithmique est également excellente.
+- **3ème : 4efficacite.java** : Bien que légèrement plus lent avec un temps d'exécution de 29 ms, cet algorithme se distingue par sa bonne complexité algorithmique, assurant une performance raisonnable sur des données de grande taille.
+
+J'ai décidé de ce podium en prenant en compte plusieurs critères, principalement la complexité algorithmique et les temps d'exécution. Voici les détails de l'évaluation :
+
+1. **Complexité algorithmique** : L'efficacité de chaque algorithme est évaluée en fonction de sa complexité algorithmique. La notation \(O(n^2)\) ou \(O(n \log(n))\) est utilisée pour déterminer comment le temps de calcul augmente avec la taille de l'entrée. Un algorithme avec une complexité inférieure est préféré car il évolue mieux avec des données de plus grande taille.
+
+2. **Temps d'exécution** : Les temps d'exécution pour les algorithmes soumis sont mesurés en millisecondes. Un algorithme plus rapide est préféré car il consomme moins de ressources et fournit les résultats plus rapidement.
+
+
+Ces algorithmes ont été choisis en se basant principalement sur leur rapidité et leur capacité à maintenir des performances élevées même avec des entrées de données croissantes.
+
+
+==== Sobriété
+
+[options="header"]
+|=======================
+|Algorithme    |Langage |Total Temps (ms) |Codacy Rank |Compile |Fonctionne  |Passe tests initiaux |Passe tests supplémentaires
+|20            |Java    |20               |C           |Compile |Oui         |Non                  |Non
+|47            |Java    |20               |B           |Compile |Oui         |Non                  |Non
+|60            |Java    |23               |B           |Compile |Oui         |Non                  |Non
+|61            |Python  |65               |C           |Compile |Oui         |Non                  |Non
+|=======================
+
+.Description des résultats
+Le tableau ci-dessus montre les résultats de l'évaluation des algorithmes soumis pour la catégorie "Sobriété numérique".
+
+== Conclusion
+
+En conclusion, cette SAÉ nous a permis de développer, soumettre et comparer différents algorithmes de compression RLE en fonction de plusieurs critères de qualité de code, efficacité, sobriété numérique et temps d'exécution. Les résultats montrent une diversité de performances et de qualités, mettant en lumière les points forts et faibles de chaque approche.

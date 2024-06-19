@@ -205,6 +205,7 @@ Voici les pré-requis pour exécuter nos codes d'évaluation.
 . Installez X
 . Lancez Y
 . Un IDE (exemple Visual Studio Code)
+. Avoir Docker
 
 === Références
 
