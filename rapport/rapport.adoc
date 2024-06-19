@@ -102,6 +102,22 @@ Ces algorithmes ont été choisis en se basant principalement sur leur rapidité
 .Description des résultats
 Le tableau ci-dessus montre les résultats de l'évaluation des algorithmes soumis pour la catégorie "Sobriété numérique".
 
+Pour cette évaluation, j'ai utilisé SonarQube avec le plugin EcoCode en raison de l'indisponibilité de l'outil habituel, Jourlar. Cette alternative m'a permis d'analyser efficacement la sobriété numérique des algorithmes, c'est-à-dire leur consommation de ressources telles que la mémoire et le CPU.
+
+Les critères de sobriété évalués avec SonarQube EcoCode incluent :
+
+1. **Utilisation de la mémoire** : L'efficacité de l'utilisation de la mémoire par l'algorithme.
+2. **Consommation CPU** : La charge CPU générée par l'exécution de l'algorithme.
+3. **Pratiques de codage éco-responsables** : Adhérence aux meilleures pratiques de codage visant à minimiser l'empreinte écologique du logiciel.
+
+Le classement est le suivant :
+
+- **1er : 20sobriete.java** : Cet algorithme s'est distingué par une utilisation minimale des ressources et une excellente performance en termes de sobriété numérique, avec un temps d'exécution de 20 ms.
+- **2ème : 47sobriete.java** : Proche du premier, cet algorithme a également montré une très bonne gestion des ressources avec un temps d'exécution de 23 ms.
+- **3ème : 61sobriete.py** : Bien que légèrement plus lent que les deux premiers avec un temps d'exécution de 30 ms, cet algorithme a démontré une bonne sobriété numérique.
+
+Ces algorithmes ont été sélectionnés pour leur efficacité en matière de consommation des ressources, assurant des performances optimales tout en minimisant leur empreinte écologique.
+
 == Conclusion
 
 En conclusion, cette SAÉ nous a permis de développer, soumettre et comparer différents algorithmes de compression RLE en fonction de plusieurs critères de qualité de code, efficacité, sobriété numérique et temps d'exécution. Les résultats montrent une diversité de performances et de qualités, mettant en lumière les points forts et faibles de chaque approche.
